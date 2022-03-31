@@ -21,10 +21,50 @@ export class InitPage implements OnInit {
       redirectTo: '/action-sheet'
     },
     {
-      icon:'logo-apple-appstore',
+      icon:'alert-circle-outline',
       name: 'alert',
       redirectTo: '/alert'
-    }
+    },
+    {
+      icon:'beaker-outline',
+      name: 'Avatar',
+      redirectTo: '/avatar'
+    },
+    {
+      icon:'radio-button-off-outline',
+      name: 'button',
+      redirectTo: '/button'
+    },
+    {
+      icon:'card-outline',
+      name: 'card',
+      redirectTo: '/card'
+    },
+    {
+      icon:'checkmark-circle-outline',
+      name: 'check',
+      redirectTo: '/check'
+    },
+    {
+      icon:'calendar-outline',
+      name: 'dateTime',
+      redirectTo: '/date-time'
+    },
+    {
+      icon:'car-outline',
+      name: 'fab',
+      redirectTo: '/fab'
+    },
+    {
+      icon:'grid-outline',
+      name: 'grid',
+      redirectTo: '/grid'
+    },
+    {
+      icon:'infinite-outline',
+      name: 'infinite',
+      redirectTo: '/infinite'
+    },
   ]
 
   constructor() { }
