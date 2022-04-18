@@ -1,10 +1,10 @@
+import { DataService } from './../../services/data.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Components } from 'src/app/interfaces/interfaces';
 
-interface Components {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
+
 
 @Component({
   selector: 'app-init',
@@ -14,62 +14,17 @@ interface Components {
 export class InitPage implements OnInit {
 
 
-  components: Components[] = [
-    {
-      icon:'american-football-sharp',
-      name: 'action sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon:'alert-circle-outline',
-      name: 'alert',
-      redirectTo: '/alert'
-    },
-    {
-      icon:'beaker-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon:'radio-button-off-outline',
-      name: 'button',
-      redirectTo: '/button'
-    },
-    {
-      icon:'card-outline',
-      name: 'card',
-      redirectTo: '/card'
-    },
-    {
-      icon:'checkmark-circle-outline',
-      name: 'check',
-      redirectTo: '/check'
-    },
-    {
-      icon:'calendar-outline',
-      name: 'dateTime',
-      redirectTo: '/date-time'
-    },
-    {
-      icon:'car-outline',
-      name: 'fab',
-      redirectTo: '/fab'
-    },
-    {
-      icon:'grid-outline',
-      name: 'grid',
-      redirectTo: '/grid'
-    },
-    {
-      icon:'infinite-outline',
-      name: 'infinite',
-      redirectTo: '/infinite'
-    },
-  ]
+  components: Observable<Components[]>;
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController,
+              private dataService: DataService) { }
 
   ngOnInit() {
+    this.components = this.dataService.getMenu()
+  }
+
+  seeMenu(){
+    this.menuCtrl.open()
   }
 
 }
